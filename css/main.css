@@ -1,0 +1,13 @@
+
+.login{
+    margin:auto;
+    background-color:#ccc;
+    padding:10px;
+    width: 300px;
+    border-radius: 20px;
+    display: flex;
+}
+.form-group{
+    flex-direction: column;
+    width: 100%;
+}
