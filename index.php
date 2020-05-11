@@ -15,6 +15,7 @@
         <div class="form-group ">
             Email o nombre de usuario
             <input  class="form-control" name="email" type="text">
+            <!-- SIEMPRE DEBE TENER UN CAMPO NAME -->
             contraseña
             <input class="form-control" name="password"  type="password">
             <button id="ingresar">Ingresar</button>
@@ -26,6 +27,4 @@
 <script src="./bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="js/script.js"></script>
-
-
 </html>
