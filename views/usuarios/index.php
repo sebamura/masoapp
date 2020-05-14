@@ -6,6 +6,7 @@
     <title>Masoapp</title>
 </head>
 <body>
+
     vista de usuario normal
 </body>
 </html>

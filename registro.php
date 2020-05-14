@@ -5,22 +5,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Masoapp</title>
 </head>
 <body>
+    <div class="container">
+	<div class="row">
+	<div class="col-md-4">
+</div>
+</div>
+</div>
+<div class="container">
+	<div class="row">
+	<div class="col-md-4">
     <form id="registro">
-        <input type="text" placeholder="nombre" name="nombre">
-        <input type="text" placeholder="rut" name="rut" id="rut">
-        <input type="text" placeholder="email" name="email" id="emailA">
-        <input type="text" placeholder="confirmar email" name="email2" id="emailB">
-        <input type="text" placeholder="contraseña" name="contrasena" id="passA">
-        <input type="text" placeholder="confirmar contraseña" name="contrasena2" id="passB">
-        <input type="text" placeholder="direccion" name="direccion">
-        <span id="error"></span>
-        <button id="registrar">registrarse</button>
-    </form>
+
+<div class="form-group">
+    <label for="Nombre">Nombre completo</label>
+    <input type="text" class="form-control" name="nombre" id="email" >
+  </div>
+  <div class="form-group">
+    <label for="rut">Rut</label>
+    <input type="text" class="form-control" name="rut" id="rut">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control"  name="email" id="emailA">
+  </div>
+  <div class="form-group">
+    <label for="email">Confirmar Email</label>
+    <input type="email" class="form-control"  name="email" id="emailB">
+  </div>
+  <div class="form-group">
+    <label for="contrasena">Contraseña</label>
+    <input type="password"  name="contrasena" id="passA">
+  </div>
+  <div class="form-group">
+    <label for="contraseña2">Confirmar contraseña</label>
+    <input type="password" name="contrasena2" id="passB">
+  </div>
+  <div class="form-group">
+    <label for="direccion">Direccion</label>
+    <input type="text" name="direccion">
+  </div>
+  <span id="error"></span>
+  <button id="registrar" class="btn btn-primary">registrar</button>
+</form>
+</div>
+</div>
+</div>   
+    <div class="container">
+	<div class="row">
+	<div class="col-md-4">
+    </div>
+</div>
+</div>
 </body>
 </html>
 
