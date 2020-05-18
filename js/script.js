@@ -1,7 +1,4 @@
 $(function(){
-
-  
-
     $('#ingresar').click(function(e){
         e.preventDefault()
         var data = $('#login').serialize() //captura todos los datos dentro del un formulario que tenga la ID #LOGIN
@@ -24,6 +21,13 @@ $(function(){
                         window.location="../masoapp/clientes/"
                         }, 1300);
                 }else if(e == 2){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Logeado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     window.location="../masoapp/doctores/"
                 }else{
                     Swal.fire({
@@ -39,8 +43,6 @@ $(function(){
             }
         })
     })
-
-
     $('#registrar').click(function(e){
         $('#error').html()
         e.preventDefault()
@@ -88,7 +90,6 @@ $(function(){
             return false
         }
     }
-
     function ValidaRut(cRut) {
 
         cRut = cRut.replace(/[\.-]/g, "");

@@ -1,9 +1,9 @@
 <?php
  session_start();
 
-echo $_SESSION['email']  ;
+echo $_SESSION['email'] ;
 
-if($_SESSION['status'] != 'paciente'){
+if($_SESSION['status'] != 'pacientes'){
     header('Location: ../doctores/index.php');
 }
 ?>
@@ -18,6 +18,8 @@ if($_SESSION['status'] != 'paciente'){
     <link rel="stylesheet" href="../css/main.css">
     <title>Masoapp</title>
 </head>
+
+<input type="text" value="">
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../index.php">MasoApp</a>
@@ -50,5 +52,5 @@ if($_SESSION['status'] != 'paciente'){
             console.log(e)
         }
     })
-
+//de bootstrap ?
 </script>
