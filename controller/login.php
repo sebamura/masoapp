@@ -2,11 +2,10 @@
 	require "../controller/conexion.php";
     session_start();
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $clave = $_POST['password'];
 
-    $sql = "SELECT * FROM user WHERE email = '$email' AND clave  = '$password';";
+    $sql = "SELECT * FROM user WHERE email = '$email' AND clave = '$clave';";
     $result = mysqli_query($mysqli, $sql);
-
 
     $fila= mysqli_num_rows($result);
 
@@ -15,7 +14,7 @@
         $_SESSION['email'] = $email;
         $_SESSION['status'] = "paciente";
     }else{
-        $sql = "SELECT * FROM admin WHERE admin_email = '$email' AND admin_password  = '$password';";
+        $sql = "SELECT * FROM admin WHERE admin_email = '$email' AND admin_password  = '$clave';";
         $result = mysqli_query($mysqli, $sql);
         $fila= mysqli_num_rows($result);
         $res = 2;

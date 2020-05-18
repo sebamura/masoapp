@@ -12,11 +12,11 @@ $(function(){
             type: 'POST',  // si vas a enviar datos a otro archivo  usas el type, si solo lo traes desde un archivo, no es necesario
             success:function(e){
                 if(e == 1){
-                    console.log('loggeado')
+                    console.log('logOk')
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Logeado correctamente',
+                        title: 'Ingreso correcto',
                         showConfirmButton: false,
                         timer: 1500
                     })
