@@ -28,10 +28,10 @@
 
         <form id="login" method ="POST">
         <div class="form-group ">
-            Email o nombre de usuario
+            Email
             <input  class="form-control" name="email" type="text">
             <!-- SIEMPRE DEBE TENER UN CAMPO NAME -->
-            contraseña
+            Contraseña
             <input class="form-control" name="password"  type="password">
             <button id="ingresar">Ingresar</button>
         </div>

@@ -19,12 +19,12 @@ $(function(){
                     })
                     setTimeout(function(){
                         window.location="../masoapp/clientes/"
-                        }, 1300);
+                        }, 1500);
                 }else if(e == 2){
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Logeado correctamente',
+                        title: 'Ingreso correcto',
                         showConfirmButton: false,
                         timer: 1500
                     })

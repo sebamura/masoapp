@@ -6,12 +6,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
+
     <title>Masoapp</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">MasoApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registro.php">Registro</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
     <div class="container">
 	<div class="row">
 	<div class="col-md-4">
@@ -41,15 +60,15 @@
   </div>
   <div class="form-group">
     <label for="contrasena">Contraseña</label>
-    <input type="password"  name="contrasena" id="passA">
+    <input type="password"  class="form-control" name="contrasena" id="passA">
   </div>
   <div class="form-group">
-    <label for="contraseña2">Confirmar contraseña</label>
-    <input type="password" name="contrasena2" id="passB">
+    <label for="contrasena2">Confirmar contraseña</label>
+    <input type="password" class="form-control" name="contrasena2" id="passB">
   </div>
   <div class="form-group">
     <label for="direccion">Direccion</label>
-    <input type="text" name="direccion">
+    <input type="text" class="form-control" name="direccion">
   </div>
   <span id="error"></span>
   <button id="registrar" class="btn btn-primary">registrar</button>

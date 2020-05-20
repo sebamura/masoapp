@@ -17,6 +17,7 @@ if($_SESSION['status'] != 'pacientes'){
     <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <title>Masoapp</title>
+
 </head>
 
 <input type="text" value="">
@@ -34,9 +35,19 @@ if($_SESSION['status'] != 'pacientes'){
       <li class="nav-item">
         <a class="nav-link" href="registro.php">Registro</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../index.php">Cerrar sesion</a>
+      </li>
     </ul>
   </div>
 </nav>
+<div class="card" style="width: 18rem;">
+  <img src="../image/logo.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Nombre paciente</h5>
+    <p class="card-text">lo que quiera poner el paciente</p>
+  </div>
+</div>
     vista de usuario normal
 </body>
 </html>
