@@ -35,7 +35,7 @@ $filaUsuario = $campo->fetch_assoc();
         <a class="nav-link" href="../registro.php">Registro</a>
       </li>
       <li class="nav-item">
-        <label class="nav-link" id="logout">Cerrar sesion</label>
+      <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
       </li>
     </ul>
   </div>

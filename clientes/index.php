@@ -1,5 +1,6 @@
 <?php
 require "../controller/conexion.php";
+
 session_start();
 
 $email = $_SESSION['email'] ;
@@ -37,13 +38,13 @@ $filaUsuario = $campo->fetch_assoc();
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../index.php">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="registro.php">Registro</a>
+        <a class="nav-link" href="../registro.php">Registro</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="logout">Cerrar sesion</a>
+        <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
       </li>
     </ul>
   </div>
@@ -57,7 +58,6 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
 </div>
-    vista de usuario normal
 </body>
 </html>
 
