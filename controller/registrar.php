@@ -2,11 +2,11 @@
 
 require "../controller/conexion.php";
 session_start();
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$password = $_POST['contrasena'];
-$direccion = $_POST['direccion'];
-$rut = $_POST['rut'];
+echo $nombre = $_POST['nombre'];
+echo $email = $_POST['email'];
+echo $password = $_POST['contrasena'];
+echo $direccion = $_POST['direccion'];
+echo $rut = $_POST['rut'];
 
     $sql = "SELECT * FROM user WHERE email = '$email'";   
     $result = mysqli_query($mysqli, $sql);
@@ -16,11 +16,21 @@ $rut = $_POST['rut'];
             $sql = "INSERT INTO `user` (`user_id`, `fullname`, `email`, `clave`, `create_at`, `address`, `rut`) VALUES (NULL, '$nombre', '$email', '$password', CURRENT_TIMESTAMP(), '$direccion', '$rut')";
             $result = mysqli_query($mysqli, $sql);
             if($result){
-                echo "usuario guardado";
+                $sql2 = "INSERT INTO `status` (`id_usuario`, `estado`,`id_anamnesis`) VALUES ('$rut','0', '$rut');";
+                $result2 = mysqli_query($mysqli, $sql2);
+
+                if($result2){
+                    $sql3="INSERT INTO `anamnesis` (`detail_id`, `detail_genero`, `detail_fono`, `detail_sick`, `detail_alergia`, `detail_cigarro`, `detail_alcohol`, `detail_droga`, `detail_medi`, `detail_cirujia`, `detail_implante`, `detail_epilepsia`, `detail_hsueño`, `user_user_id`) VALUES ('$rut', '', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2');";
+                    $result3 = mysqli_query($mysqli, $sql3);
+                    if(!$result3){
+                        echo 'QUE CHUCHAAAAAAAAA!!!!!!!';
+                    }
+                }
+            }else{
+                echo "??";
             }
-           
         }
-        
+        echo "vacio";
     }else{
         echo "El ususario ya existe";
     }

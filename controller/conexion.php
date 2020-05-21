@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$db="masoapp2";
+$db="masoapp";
 
 $mysqli = mysqli_connect($host,$user,$password,$db);
 

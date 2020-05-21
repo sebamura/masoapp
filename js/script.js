@@ -58,7 +58,6 @@ $(function(){
             $('#error').html('el formato rut no es valido')
         }
 
-
         if(!verificar(emailA,emailB)){
             $('#error').html('el email no coincide')
         }
@@ -121,4 +120,15 @@ $(function(){
         }
         return ok;
     }
+    $(document).on('click','#logout',function(){
+        console.log('click')
+        $.ajax({
+            url:'../controller/logout.php',
+            success:function(e){
+                console.log(e)
+                window.location="../masoapp/../index.php"
+            }
+        })
+    })
+    
 })

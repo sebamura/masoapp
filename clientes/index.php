@@ -1,11 +1,18 @@
 <?php
- session_start();
+require "../controller/conexion.php";
+session_start();
 
-echo $_SESSION['email'] ;
+$email = $_SESSION['email'] ;
 
 if($_SESSION['status'] != 'pacientes'){
-    header('Location: ../doctores/index.php');
+    header('Location: ../index.php');
 }
+
+$sql = "SELECT * FROM user WHERE email = '$email';";
+$campo = $mysqli->query($sql);
+
+$filaUsuario = $campo->fetch_assoc();
+
 ?>
 
 
@@ -20,8 +27,8 @@ if($_SESSION['status'] != 'pacientes'){
 
 </head>
 
-<input type="text" value="">
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../index.php">MasoApp</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +43,7 @@ if($_SESSION['status'] != 'pacientes'){
         <a class="nav-link" href="registro.php">Registro</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">Cerrar sesion</a>
+        <a class="nav-link" id="logout">Cerrar sesion</a>
       </li>
     </ul>
   </div>
@@ -44,8 +51,10 @@ if($_SESSION['status'] != 'pacientes'){
 <div class="card" style="width: 18rem;">
   <img src="../image/logo.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Nombre paciente</h5>
-    <p class="card-text">lo que quiera poner el paciente</p>
+    <h5 class="card-title"><?php echo $filaUsuario['fullname']; ?></h5>
+    <p class="card-text"><?php echo $filaUsuario['rut']; ?></p>
+    <p class="card-text"><?php echo $filaUsuario['email']; ?></p>
+    <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
 </div>
     vista de usuario normal
@@ -57,11 +66,17 @@ if($_SESSION['status'] != 'pacientes'){
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="../js/script.js"></script>
 <script>
+$(function(){
   $.ajax({
         url:"../controller/verificar.php",
         success:function(e){
-            console.log(e)
+          console.log(e)
+            if(e == '0' ){
+              window.location="../masoapp/../clientes/anamnesis.php"
+            }
         }
     })
+})
+  
 //de bootstrap ?
 </script>

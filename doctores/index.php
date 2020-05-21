@@ -1,9 +1,13 @@
 <?php
+require "../controller/conexion.php";
 session_start();
-echo $_SESSION['email']  ;
+$email = $_SESSION['email']; ;
 if($_SESSION['status'] != 'doctores'){
-    header('Location: ../clientes/index.php');
+    header('Location: ../index.php');
 }
+$sql = "SELECT * FROM admin WHERE admin_email = '$email';";
+$campo = $mysqli->query($sql);
+$filaUsuario = $campo->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +20,6 @@ if($_SESSION['status'] != 'doctores'){
     <title>Masoapp</title>
 </head>
 <body>
-
-<input type="text" value="">
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../index.php">MasoApp</a>
@@ -33,7 +35,7 @@ if($_SESSION['status'] != 'doctores'){
         <a class="nav-link" href="../registro.php">Registro</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">Cerrar sesion</a>
+        <label class="nav-link" id="logout">Cerrar sesion</label>
       </li>
     </ul>
   </div>
@@ -42,11 +44,16 @@ if($_SESSION['status'] != 'doctores'){
 <div class="card" style="width: 18rem;">
   <img src="../image/logo.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Nombre paciente</h5>
-    <p class="card-text">lo que quiera poner el paciente</p>
+    <h5 class="card-title"><?php echo $filaUsuario['admin_fullname']; ?></h5>
+    <p class="card-text"><?php echo $filaUsuario['admin_email']; ?></p>
   </div>
 </div>
     vista de doctores
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="../js/script.js"></script>
 </html>
 
