@@ -9,10 +9,13 @@ $campo = $mysqli->query($sql);
 
 $filaUsuario = $campo->fetch_assoc();
 
-echo $id =  $filaUsuario['rut'];
+ $id =  $filaUsuario['rut'];
 
 $sql2 = "SELECT * FROM  `status` WHERE id_usuario ='$id';";
- $campo2 = $mysqli->query($sql);
- $data = $campo->fetch_assoc();
- echo $id2 =  $data['user_id'];
+ $campo2 = $mysqli->query($sql2);
+ if(mysqli_num_rows($campo2)>0){
+    $fila = $campo2->fetch_array(MYSQLI_ASSOC);
+    echo $id2 = $fila['estado'];
+ }
+
 ?>

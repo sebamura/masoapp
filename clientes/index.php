@@ -18,7 +18,7 @@ $filaUsuario = $campo->fetch_assoc();
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,6 +58,73 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
 </div>
+<div class="fondo">
+  <div class="modals">
+  <h1>Anamnesis</h1>
+  <form id="anamnesis_form">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Sexo</label>
+      <input type="text" class="form-control" name="sexo" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Enfermedades</label>
+      <input type="text" class="form-control" name="enfermedad" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Alergias </label>
+      <input type="text" class="form-control" name="alergias" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Consumo cigarro</label>
+      <input type="text" class="form-control" name="cigarro" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Consumo alcohol</label>
+      <input type="text" class="form-control" name="alcohol" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Consumo drogas</label>
+      <input type="text" class="form-control" name="drogas" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Medicamentos habituales</label>
+      <input type="text" class="form-control" name="medicamentos" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Cirujias</label>
+      <input type="text" class="form-control" name="cirujias" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">implantes</label>
+      <input type="text" class="form-control" name="implantes" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Casos de epilepsia</label>
+      <input type="text" class="form-control" name="epilepsia" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Horas de sueño</label>
+      <input type="text" class="form-control" name="sueno" id="inputEmail4">
+    </div>
+   
+  </div> 
+  </form>
+  <button  class="btn btn-primary" id="anamnesis">Crear anamnesis</button>
+  </div>
+</div>
+
+
 </body>
 </html>
 
@@ -67,16 +134,29 @@ $filaUsuario = $campo->fetch_assoc();
 <script src="../js/script.js"></script>
 <script>
 $(function(){
+  $('.fondo').hide()
   $.ajax({
         url:"../controller/verificar.php",
         success:function(e){
           console.log(e)
             if(e == '0' ){
-              window.location="../masoapp/../clientes/anamnesis.php"
+              $('.fondo').show()
+              //window.location="../masoapp/../clientes/anamnesis.php"
             }
         }
     })
+    $('#anamnesis').click(function(){
+      var data = $('#anamnesis_form').serialize()
+      console.log(data)
+      $.ajax({
+        url:"../controller/anamnesis.php",
+        type:'POST',
+        data:data,
+        success:function(e){
+          console.log(e)
+         // $('.fondo').hide()
+        }
+      })
+    })
 })
-  
-//de bootstrap ?
 </script>
