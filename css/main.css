@@ -12,6 +12,7 @@
     width: 100%;
 }
 .fondo{
+    display:none;
     position: absolute;
     top:0;
     width:100%;

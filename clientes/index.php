@@ -134,7 +134,7 @@ $filaUsuario = $campo->fetch_assoc();
 <script src="../js/script.js"></script>
 <script>
 $(function(){
-  $('.fondo').hide()
+  
   $.ajax({
         url:"../controller/verificar.php",
         success:function(e){
@@ -142,6 +142,8 @@ $(function(){
             if(e == '0' ){
               $('.fondo').show()
               //window.location="../masoapp/../clientes/anamnesis.php"
+            }else{
+              $('.fondo').hide()
             }
         }
     })
@@ -154,7 +156,9 @@ $(function(){
         data:data,
         success:function(e){
           console.log(e)
-         // $('.fondo').hide()
+          if(e==true){
+            $('.fondo').hide()
+          }
         }
       })
     })

@@ -50,7 +50,7 @@ $sql2= "UPDATE `anamnesis` SET
 WHERE `detail_id` = '$id';
 ";
 $result = mysqli_query($mysqli, $sql2);
-echo $result;
+$result;
 if($result){
          //ingresar los datos insert
     $sql = "UPDATE `status` SET `estado` = '1' WHERE `status`.`id_usuario` = '$id';";
