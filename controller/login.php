@@ -35,3 +35,11 @@
         // $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
     echo $res;
 ?>
+
+
+
+
+
+
+
+

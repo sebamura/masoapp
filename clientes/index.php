@@ -58,7 +58,7 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
 </div>
-<div class="fondo">
+<div class="fondo" id="modal-1" style="display:none;">
   <div class="modals">
   <h1>Anamnesis</h1>
   <form id="anamnesis_form">
@@ -134,7 +134,7 @@ $filaUsuario = $campo->fetch_assoc();
 <script src="../js/script.js"></script>
 <script>
 $(function(){
-  
+
   $.ajax({
         url:"../controller/verificar.php",
         success:function(e){
@@ -155,12 +155,12 @@ $(function(){
         type:'POST',
         data:data,
         success:function(e){
-          console.log(e)
-          if(e==true){
+         
             $('.fondo').hide()
-          }
+         $("#modal-1").hide()
         }
       })
     })
+    
 })
 </script>
