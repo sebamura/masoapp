@@ -117,8 +117,7 @@ $filaUsuario = $campo->fetch_assoc();
       <label for="inputEmail4">Horas de sueño</label>
       <input type="text" class="form-control" name="sueno" id="inputEmail4">
     </div>
-   
-  </div> 
+  </div>
   </form>
   <button  class="btn btn-primary" id="anamnesis">Crear anamnesis</button>
   </div>
@@ -155,12 +154,10 @@ $(function(){
         type:'POST',
         data:data,
         success:function(e){
-         
-            $('.fondo').hide()
-         $("#modal-1").hide()
+          $('.fondo').hide()
+          $("#modal-1").hide()
         }
       })
     })
-    
 })
 </script>
