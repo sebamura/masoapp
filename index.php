@@ -29,7 +29,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Quienes Somos</h4>
+				<h4 class="modal-title" id="myModalLabel">Cerrar</h4>
 			</div>
 			<div class="modal-body">
 				Texto de Quienes Somos
@@ -47,7 +47,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Contacto</h4>
+				<h4 class="modal-title" id="myModalLabel">Cerrar</h4>
 			</div>
 			<div class="modal-body">
 				Texto de Contacto
