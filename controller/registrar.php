@@ -13,7 +13,7 @@ echo $rut = $_POST['rut'];
     $fila= mysqli_num_rows($result);
     if($fila == 0){
         if(!empty($_POST)){
-            $sql = "INSERT INTO `user` (`user_id`, `fullname`, `email`, `clave`, `create_at`, `address`, `rut`) VALUES (NULL, '$nombre', '$email', '$password', CURRENT_TIMESTAMP(), '$direccion', '$rut')";
+            $sql = "INSERT INTO `user` (`user_id`, `fullname`, `email`, `clave`, `create_at`, `address`, `rut`) VALUES ('', '$nombre', '$email', '$password', CURRENT_TIMESTAMP(), '$direccion', '$rut')";
             $result = mysqli_query($mysqli, $sql);
             if($result){
                 $sql2 = "INSERT INTO `status` (`id_usuario`, `estado`,`id_anamnesis`) VALUES ('$rut','0', '$rut');";
