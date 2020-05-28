@@ -1,4 +1,5 @@
 $(function(){
+
     $('#ingresar').click(function(e){
         e.preventDefault()
         var data = $('#login').serialize() //captura todos los datos dentro del un formulario que tenga la ID #LOGIN
@@ -130,5 +131,8 @@ $(function(){
             }
         })
     })
-   
+
+  
+
+
 })

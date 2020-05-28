@@ -124,6 +124,8 @@ $filaUsuario = $campo->fetch_assoc();
 </div>
 
 
+
+
 </body>
 </html>
 
@@ -133,7 +135,6 @@ $filaUsuario = $campo->fetch_assoc();
 <script src="../js/script.js"></script>
 <script>
 $(function(){
-
   $.ajax({
         url:"../controller/verificar.php",
         success:function(e){
