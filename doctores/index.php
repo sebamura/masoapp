@@ -31,13 +31,15 @@ $filaUsuario = $campo->fetch_assoc();
       <li class="nav-item active">
         <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../registro.php">Registro</a>
-      </li>
+
       <li class="nav-item">
       <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
-      </li>
+      </li> 
     </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </nav>    
     
@@ -48,11 +50,15 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['admin_email']; ?></p>
   </div>
 </div>
+<<<<<<< HEAD
     vista de doctores
     <input type="text" id="buscador">
     <div id="datos">
 
 </div>
+=======
+
+>>>>>>> 46bf894917fcd1ef7c36a448043bc1108ad2a98c
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../js/script.js"></script>
