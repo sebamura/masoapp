@@ -90,8 +90,10 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['email']; ?></p>
     <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
+  <a class="btn btn-primary" href="anamnesis.php" >Crear anamnesis</a>
+
 </div>
-<div class="fondo" id="modal-1" style="display:none;">
+<!--<div class="fondo" id="modal-1" style="display:none;">
   <div class="modals">
   <h1>Anamnesis</h1>
   <form id="anamnesis_form">
@@ -153,7 +155,7 @@ $filaUsuario = $campo->fetch_assoc();
   </div>
   </form>
   <button  class="btn btn-primary" id="anamnesis">Crear anamnesis</button>
-  </div>
+  </div>-->
 </div>
 
 
@@ -184,7 +186,7 @@ $(function(){
       var data = $('#anamnesis_form').serialize()
       console.log(data)
       $.ajax({
-        url:"../controller/anamnesis.php",
+        url:"./controller/anamnesis.php",
         type:'POST',
         data:data,
         success:function(e){

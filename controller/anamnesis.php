@@ -11,29 +11,35 @@ $id =  $filaUsuario['rut'];
 
 
 echo $sexo = $_POST['sexo'];
-
+echo $fono = $_POST['fono'];
 echo $enfermedad =$_POST['enfermedad'];
-echo "---";
 echo $alergia = $_POST['alergias'];
-echo "---";
 echo $cigarro = $_POST['cigarro'];
-echo "---";
 echo $alcohol = $_POST['alcohol'];
-echo "---";
 echo $droga = $_POST['drogas'];
-echo "---";
 echo $medi = $_POST['medicamentos'];
-echo "---";
 echo $cirujia = $_POST['cirujias'];
-echo "---";
 echo $implante = $_POST['implantes'];
-echo "---";
 echo $epilepsia = $_POST['epilepsia'];
-echo "---";
 echo $sueno = $_POST['sueno'];
-echo "---";
 
-$sql2= "UPDATE `anamnesis` SET
+$sql2="INSERT INTO `anamnesis` VALUES ('$id', '$sexo', '$fono', '$enfermedad', '$alergia', '$cigarro', '$alcohol', '$droga', '$medi', '$cirujia', '$implante', '$epilepsia', '$sueno', '$id')";
+    $resultado = mysqli_query($mysqli,$sql2);
+    if(!$resultado){
+      console.log("hubo un error en la query");
+    }else{
+      alert("SE guardó anamnesis con éxito");
+    }
+    //$sql2="INSERT INTO `anamnesis` VALUES ('$id', '$sexo', '$fono', '$enfermedad', '$alergia ', '$cigarro', '$alcohol', '$droga', '$medi', '$cirujia', '$implante', '$epilepsia', '$sueno', '$id');";
+    //$resultado = mysqli_query($mysqli, $sql2);
+
+      //  if(!$resultado){
+        //    echo "Hubo algun error";
+    //}else{
+      //      echo "Anamnesis OK";
+    //}
+
+/*$sql2= "UPDATE `anamnesis` SET
 `detail_genero` = '$sexo',
 `detail_fono` = '3',
 `detail_sick` = '$enfermedad',
@@ -48,7 +54,7 @@ $sql2= "UPDATE `anamnesis` SET
 `detail_hsueño` = '$sueno',
 `user_user_id` = 2
 WHERE `detail_id` = '$id';
-";
+";*/
 $result = mysqli_query($mysqli, $sql2);
 $result;
 if($result){
