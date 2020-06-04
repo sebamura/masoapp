@@ -2,20 +2,25 @@
 require "../controller/conexion.php";
 session_start();
 $tabla = "";
-$paciente = $mysqli -> real_escape_string($_POST['pacientes']);
-$sql = "SELECT * FROM user  WHERE fullname LIKE '%".$paciente."%' OR rut LIKE '%".$paciente."%'";
+//paciente = $mysqli -> real_escape_string($_POST['pacientes']);
+$sql = "SELECT * FROM user";
 $result = $mysqli->query($sql);
 
 if($result -> num_rows > 0 ){
-    $tabla .= "<table>
+    $tabla .= "<table class ='table table-striped'>
                 <tr>
                     <th>Nombre</th>
                     <th>Rut</th>
+                    <th>email</th>
+                    <th>direccion</th>
                 </tr>";
     while($row = $result-> fetch_assoc()){
         $tabla .="<tr>
                     <td>".$row['fullname']."</td>
                     <td>".$row['rut']."</td>
+                    <td>".$row['email']."</td>
+                    <td>".$row['address']."</td>
+
                 </tr>";
     }
     $tabla .=" </table>";

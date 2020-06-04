@@ -52,61 +52,61 @@ $filaUsuario = $campo->fetch_assoc();
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Sexo">Sexo</label>
-      <input type="text" class="form-control" name="sexo" id="sexo">
+      <input  placeholder="Genero" type="text" class="form-control" name="sexo" id="sexo">
     </div>
     <div class="form-group col-md-6">
       <label for="Fono">Fono</label>
-      <input type="text" class="form-control" name="fono" id="fono">
+      <input placeholder="Numero de teléfono" type="text" class="form-control" name="fono" id="fono">
     </div>
     <div class="form-group col-md-6">
       <label for="Enfermedad">Enfermedades</label>
-      <input type="text" class="form-control" name="enfermedad" id="enfermedad">
+      <input placeholder="Enfermedades recientes" type="text" class="form-control" name="enfermedad" id="enfermedad">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Alergias">Alergias </label>
-      <input type="text" class="form-control" name="alergias" id="alergias">
+      <input placeholder="Alergias" type="text" class="form-control" name="alergias" id="alergias">
     </div>
     <div class="form-group col-md-6">
       <label for="Cigarro">Consumo cigarro</label>
-      <input type="text" class="form-control" name="cigarro" id="cigarro">
+      <input placeholder="Frecuencia de consumo de cigarrillos" type="text" class="form-control" name="cigarro" id="cigarro">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Alcohol">Consumo alcohol</label>
-      <input type="text" class="form-control" name="alcohol" id="alcohol">
+      <input placeholder="Frecuencia de consumo de alcohol" type="text" class="form-control" name="alcohol" id="alcohol">
     </div>
     <div class="form-group col-md-6">
       <label for="Drogas">Consumo drogas</label>
-      <input type="text" class="form-control" name="drogas" id="drogas">
+      <input placeholder="Frecuencia de consumo de drogas" type="text" class="form-control" name="drogas" id="drogas">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Medicamentos">Medicamentos habituales</label>
-      <input type="text" class="form-control" name="medicamentos" id="medicamentos">
+      <input placeholder="Nombre medicamentos habituales" type="text" class="form-control" name="medicamentos" id="medicamentos">
     </div>
     <div class="form-group col-md-6">
       <label for="Cirujias">Cirujias</label>
-      <input type="text" class="form-control" name="cirujias" id="cirujias">
+      <input placeholder="Cirujias estéticas o medicas" type="text" class="form-control" name="cirujias" id="cirujias">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Implantes">implantes</label>
-      <input type="text" class="form-control" name="implantes" id="implantes">
+      <input placeholder="Implantes en el cuerpo" type="text" class="form-control" name="implantes" id="implantes">
     </div>
     <div class="form-group col-md-6">
       <label for="Epilepsia">Casos de epilepsia</label>
-      <input type="text" class="form-control" name="epilepsia" id="epilepsia">
+      <input placeholder="Casos de epilepsia recientes" type="text" class="form-control" name="epilepsia" id="epilepsia">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Sueño">Horas de sueño</label>
-      <input type="text" class="form-control" name="sueno" id="sueno">
+      <input placeholder="Cantidad de horas de sueño habitual" type="text" class="form-control" name="sueno" id="sueno">
     </div>
   </div>
   <button  class="btn btn-primary" id="btnguardar">Crear anamnesis</button>

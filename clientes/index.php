@@ -76,6 +76,9 @@ $filaUsuario = $campo->fetch_assoc();
 <li class="nav-item active"> 
 <a class="nav-link" href="#" data-toggle="modal" data-target="#miModal2"> Contacto</a> 
 </li>
+<li class="nav-item active">
+        <a class="nav-link" href="datos.php">Datos medicos <span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
       </li>
@@ -91,75 +94,8 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
   <a class="btn btn-primary" href="anamnesis.php" >Crear anamnesis</a>
-
 </div>
-<!--<div class="fondo" id="modal-1" style="display:none;">
-  <div class="modals">
-  <h1>Anamnesis</h1>
-  <form id="anamnesis_form">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Sexo</label>
-      <input type="text" class="form-control" name="sexo" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Enfermedades</label>
-      <input type="text" class="form-control" name="enfermedad" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Alergias </label>
-      <input type="text" class="form-control" name="alergias" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Consumo cigarro</label>
-      <input type="text" class="form-control" name="cigarro" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Consumo alcohol</label>
-      <input type="text" class="form-control" name="alcohol" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Consumo drogas</label>
-      <input type="text" class="form-control" name="drogas" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Medicamentos habituales</label>
-      <input type="text" class="form-control" name="medicamentos" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Cirujias</label>
-      <input type="text" class="form-control" name="cirujias" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">implantes</label>
-      <input type="text" class="form-control" name="implantes" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Casos de epilepsia</label>
-      <input type="text" class="form-control" name="epilepsia" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Horas de sueño</label>
-      <input type="text" class="form-control" name="sueno" id="inputEmail4">
-    </div>
-  </div>
-  </form>
-  <button  class="btn btn-primary" id="anamnesis">Crear anamnesis</button>
-  </div>-->
 </div>
-
-
-
 
 </body>
 </html>
@@ -196,4 +132,30 @@ $(function(){
       })
     })
 })
+
+$(document).on('keyup','#buscador',function(){
+        var busqueda = $(this).val()
+
+        console.log('ok')
+        if(busqueda != " "){
+            datos(busqueda)
+        }else{
+            $('#datos').html('')
+        }
+
+    })
+    function datos(data){
+        $.ajax({
+            url:'../controller/buscar.php',
+            type:'POST',
+            data:{
+                "pacientes":data
+            },
+            success:function(res){
+              console.log(res)
+                $('#datos').html(res)
+            }
+        })
+    }
+
 </script>

@@ -18,13 +18,6 @@ echo $rut = $_POST['rut'];
             if($result){
                 $sql2 = "INSERT INTO `status` (`id_usuario`, `estado`,`id_anamnesis`) VALUES ('$rut','0', '$rut');";
                 echo $result2 = mysqli_query($mysqli, $sql2);
-                /*if($result2){
-                    $sql3="INSERT INTO `anamnesis` (`detail_id`, `detail_genero`, `detail_fono`, `detail_sick`, `detail_alergia`, `detail_cigarro`, `detail_alcohol`, `detail_droga`, `detail_medi`, `detail_cirujia`, `detail_implante`, `detail_epilepsia`, `detail_hsueño`, `user_user_id`) VALUES ('$rut', 'vacio', '123', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', '1', '$rut');";
-                    echo $result3 = mysqli_query($mysqli, $sql3);
-                    if(!$result3){
-                        echo 'QUE CHUCHAAAAAAAAA!!!!!!!';
-                    }
-                }*/
             }else{
                 echo "??";
             }
