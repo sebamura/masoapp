@@ -16,6 +16,7 @@ $filaUsuario = $campo->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="../js/script.js"></script>
@@ -35,9 +36,6 @@ $filaUsuario = $campo->fetch_assoc();
       <li class="nav-item active">
         <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="datosanam.php">Anamensis Clientes<span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
       <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
       </li> 
@@ -48,8 +46,8 @@ $filaUsuario = $campo->fetch_assoc();
   </div>
 </nav>
 
-<h1>Clientes</h1>
-
+<h1>Anamnesis de clientes</h1>
+</table>
 <div class="container">
 <div id="tabla">
 </div>
@@ -59,13 +57,17 @@ $filaUsuario = $campo->fetch_assoc();
 <script>
 $(function(){
   $.ajax({
-    url:'../controller/buscar.php',
+    url:'../controller/anambuscar.php',
     success: function(r){
       $('#tabla').html(r);
     }
   })
 })
+function editar(idedit){
+  
+}
 
 
 </script>
+
 </html>

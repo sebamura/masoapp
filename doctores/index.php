@@ -34,6 +34,9 @@ $filaUsuario = $campo->fetch_assoc();
       <li class="nav-item active">
         <a class="nav-link" href="datos.php">Clientes<span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="datosanam.php">Anamensis Clientes<span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item">
       <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
       </li> 

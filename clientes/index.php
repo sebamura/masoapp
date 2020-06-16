@@ -30,6 +30,14 @@ $filaUsuario = $campo->fetch_assoc();
 
 <body background="../image/fondoblanco.png">
 
+<?php
+    if (isset($_SESSION['message']) && $_SESSION['message'])
+    {
+      printf('<b>%s</b>', $_SESSION['message']);
+      unset($_SESSION['message']);
+    }
+  ?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../index.php">MasoApp</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,6 +93,10 @@ $filaUsuario = $campo->fetch_assoc();
     </ul>
   </div>
 </nav>
+<div class="container">
+  <hr>
+  <div class="row">
+    <div class="col-3 col-md-3"> 
 <div class="card" style="width: 18rem;">
   <img src="../image/logo.jpg" class="card-img-top" alt="...">
   <div class="card-body">
@@ -94,9 +106,36 @@ $filaUsuario = $campo->fetch_assoc();
     <p class="card-text"><?php echo $filaUsuario['address']; ?></p>
   </div>
   <a class="btn btn-primary" href="anamnesis.php" >Crear anamnesis</a>
-</div>
-</div>
+  <br>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Subir archivo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 
+      <form method="POST" action="../controller/guardardoc.php" enctype="multipart/form-data">
+    <div>
+      <input type="file" name="uploadedFile" />
+    </div>
+    <input type="submit" name="uploadBtn" value="Subir Archivo" />
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Subir Archivo PDF o Word</button>
+</li>
+</div>
+</div>
 </body>
 </html>
 
@@ -157,5 +196,17 @@ $(document).on('keyup','#buscador',function(){
             }
         })
     }
+    $('#subir').click(function(){
+    var formData = new FormData($("#subirDoc")[0]);
+    $.ajax({
+    url:'./controller/guardardoc.php',
+    data: formData,
+    contentType: false,
+    processData: false,
+    success:function(res){
+    console.log(res)
+}
+})
+})
 
 </script>
