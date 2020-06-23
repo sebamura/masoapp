@@ -19,8 +19,7 @@ $filaUsuario = $campo->fetch_assoc();
     <link rel="stylesheet" href="../css/main.css">
     <title>Masoapp</title>
 </head>
-<body>
-<body>
+<body background="../image/fondoblanco.png">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../index.php">MasoApp</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +42,6 @@ $filaUsuario = $campo->fetch_assoc();
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id="buscador" aria-label="Search">
-     
     </form>
   </div>
 </nav>    
@@ -54,6 +52,7 @@ $filaUsuario = $campo->fetch_assoc();
     <h5 class="card-title"><?php echo $filaUsuario['admin_fullname']; ?></h5>
     <p class="card-text"><?php echo $filaUsuario['admin_email']; ?></p>
   </div>
+  <a href="chatpage.php" class="btn btn-primary">Chat</a>
 </div>
 
 <div id="datos">

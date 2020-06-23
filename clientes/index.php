@@ -87,6 +87,7 @@ $filaUsuario = $campo->fetch_assoc();
 <li class="nav-item active">
         <a class="nav-link" href="datos.php">Datos medicos <span class="sr-only">(current)</span></a>
       </li>
+      <a href="chatpage.php" class="btn btn-primary">Chat</a>
       <li class="nav-item">
         <a class="nav-link" href="../controller/logout.php">Cerrar sesion</a>
       </li>
@@ -120,10 +121,11 @@ $filaUsuario = $campo->fetch_assoc();
 
       <form method="POST" action="../controller/guardardoc.php" enctype="multipart/form-data">
     <div>
+      <span>Upload a File:</span>
       <input type="file" name="uploadedFile" />
     </div>
-    <input type="submit" name="uploadBtn" value="Subir Archivo" />
-      </form>
+    <input type="submit" name="uploadBtn" value="Upload" />
+  </form>
 
       </div>
       <div class="modal-footer">
@@ -136,6 +138,7 @@ $filaUsuario = $campo->fetch_assoc();
 </li>
 </div>
 </div>
+
 </body>
 </html>
 
